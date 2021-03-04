@@ -23,7 +23,7 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return contactFragment
     }
 
-    override fun getPageTitle(position: Int): CharSequence? { // set judul pada tab layout
+    override fun getPageTitle(position: Int): CharSequence? {
         when (position) {
             0 -> return "Contact"
             1 -> return "Message"
