@@ -7,45 +7,18 @@ import com.example.fragmenttrialapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    var viewPagerAdapter: ViewPagerAdapter = ViewPagerAdapter(getSupportFragmentManager())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val contactFragment = ContactFragment()
-        val messageFragment = MessageFragment()
-        val statusFragment = StatusFragment()
 
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment, contactFragment)
-            commit()
-        }
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+        binding.viewPager.setAdapter(viewPagerAdapter)
+        binding.viewPager.setCurrentItem(1)
 
-        binding.btnContact.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragment, contactFragment)
-
-                // function addToBackStack digunakan untuk menambah stack pada aplikasi
-                addToBackStack(null)
-                commit()
-            }
-        }
-
-        binding.btnMessage.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragment, messageFragment)
-                addToBackStack(null)
-                commit()
-            }
-        }
-
-        binding.btnStatus.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragment, statusFragment)
-                addToBackStack(null)
-                commit()
-            }
-        }
     }
+
 }
