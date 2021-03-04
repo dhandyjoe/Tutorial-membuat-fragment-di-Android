@@ -10,11 +10,11 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     val messageFragment = MessageFragment()
     val statusFragment = StatusFragment()
 
-    override fun getCount(): Int {
+    override fun getCount(): Int { // function ini digunakan untuk mengembalikan jumlah fragment yang ada
         return 3
     }
 
-    override fun getItem(position: Int): Fragment {
+    override fun getItem(position: Int): Fragment { // function ini digunakan untuk set tampilan fragment yang dibutuhkan
         when(position) {
             0 -> return contactFragment
             1 -> return messageFragment
@@ -23,7 +23,7 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return contactFragment
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence? { // set judul pada tab layout
         when (position) {
             0 -> return "Contact"
             1 -> return "Message"
