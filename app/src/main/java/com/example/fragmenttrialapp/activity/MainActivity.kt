@@ -2,7 +2,7 @@ package com.example.fragmenttrialapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fragmenttrialapp.ViewPagerAdapter
+import com.example.fragmenttrialapp.adapter.ViewPagerAdapter
 import com.example.fragmenttrialapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

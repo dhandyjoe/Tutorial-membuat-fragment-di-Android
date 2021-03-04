@@ -1,8 +1,11 @@
-package com.example.fragmenttrialapp
+package com.example.fragmenttrialapp.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.fragmenttrialapp.fragment.ContactFragment
+import com.example.fragmenttrialapp.fragment.MessageFragment
+import com.example.fragmenttrialapp.fragment.StatusFragment
 
 class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -23,7 +26,7 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return contactFragment
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence? { // function ini digunakan untuk membuat judul pada tab layout
         when (position) {
             0 -> return "Contact"
             1 -> return "Message"
