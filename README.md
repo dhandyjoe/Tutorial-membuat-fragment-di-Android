@@ -7,6 +7,11 @@
 
 ### Tutorial membuat Fragment pada Android
 ##### 1.  Sync ViewBinding pada build.gradle
+> Fungsi dari View Binding adalah untuk mengakses view yang ada pada Layout .xml
+> 
+> Menggantikan findViewById, Kotlin Synthetic
+> 
+> Direkomendasikan oleh Google
 
     android {
       ...
@@ -17,6 +22,9 @@
 
     
 --->    Lalu klik 'sync now' pada kanan atas 
+
+![Screenshot from 2021-03-05 09-11-01](https://user-images.githubusercontent.com/68207916/110057208-c80e2700-7d92-11eb-968f-656926acc168.png)
+
     
 ##### 2.  Buat 3 fragment blank file
 + Contact Fragment
