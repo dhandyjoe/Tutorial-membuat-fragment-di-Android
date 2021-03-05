@@ -1,4 +1,4 @@
 # fragment-android
 
 #### PREVIEW APP :
-<img src"https://github.com/dhandyjoe/fragment-android/blob/master/tutorial-fragment.gif" width="200" height="200" />
+![tutorial-fragment](https://user-images.githubusercontent.com/68207916/110053602-4fa46780-7d8c-11eb-9e91-a9741147e8eb.gif)
