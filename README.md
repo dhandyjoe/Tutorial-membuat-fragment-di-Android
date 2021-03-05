@@ -7,16 +7,16 @@
 
 ### Tutorial membuat Fragment pada Android
 ##### 1.  Sync ViewBinding pada build.gradle
-    ```
+
     android {
       ...
       viewBinding {
         enabled = true
       }
     }
-    ```
+
     
-    Lalu klik 'sync now' pada kanan atas 
+Lalu klik 'sync now' pada kanan atas 
     
 ##### 2.  Buat 3 fragment blank file
           - Contact Fragment
