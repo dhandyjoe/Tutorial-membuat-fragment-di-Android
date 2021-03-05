@@ -148,9 +148,52 @@ class ContactFragment : Fragment() {
 </FrameLayout>
 ```
 
+##### 5.  Buat class adapter untuk ViewPager-nya --> beri nama ViewPagerAdapter
+---> Class ini berguna untuk menghubungkan tablayout dengan view pagernya, sekaligus menambahkan fitur slide didalamnya
 
+```
+class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
+    val contactFragment = ContactFragment()
+    val messageFragment = MessageFragment()
+    val statusFragment = StatusFragment()
 
+    override fun getCount(): Int { // function ini digunakan untuk mengembalikan jumlah fragment yang ada
+        return 3
+    }
+
+    override fun getItem(position: Int): Fragment { // function ini digunakan untuk set tampilan fragment yang dibutuhkan
+        when(position) {
+            0 -> return contactFragment
+            1 -> return messageFragment
+            2 -> return statusFragment
+        }
+        return contactFragment
+    }
+
+    override fun getPageTitle(position: Int): CharSequence? { // function ini digunakan untuk membuat judul pada tab layout
+        when (position) {
+            0 -> return "Contact"
+            1 -> return "Message"
+            2 -> return "Status"
+        }
+        return null
+    }
+}
+```
+
+##### 6.  Deklarasi ViewPager di MainActivity
+```
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        ...
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+        binding.viewPager.setAdapter(viewPagerAdapter)
+        binding.viewPager.setCurrentItem(1) // digunakan untuk set first page saat pertama kali aplikasi dibuka
+    }
+}
+```
 
 
 
