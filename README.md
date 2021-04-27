@@ -194,6 +194,9 @@ class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 ```
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    var viewPagerAdapter: ViewPagerAdapter = ViewPagerAdapter(getSupportFragmentManager())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         ...
         binding.tabLayout.setupWithViewPager(binding.viewPager)
